@@ -297,6 +297,10 @@ namespace HoNBuildPlanner
         {
             return m_maxLevel;
         }
+        public void MaxLevel(int max)
+        {
+            m_maxLevel = max;
+        }
 
         private float IAS()
         {

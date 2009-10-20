@@ -23,19 +23,33 @@ namespace HoNBuildPlanner
 
         private void mi_Exit_Click(object sender, EventArgs e)
         {
+            if (HoNBP.ActualBuild() != null)
+            {
+                if (MessageBox.Show("Do you like to save your current build?", "There is another build loaded.", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    SaveBuild();
+                }
+            }
+
             Application.Exit();
         }
 
         private void mi_NewBuild_Click(object sender, EventArgs e)
         {
+            if (HoNBP.ActualBuild() != null)
+            {
+                if (MessageBox.Show("Do you like to save your current build?", "There is another build loaded.", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    SaveBuild();
+                }
+            }
+
             newBuild newBuildWindow = new newBuild();
 
             newBuildWindow.ShowDialog();
 
             if (HoNBP.NewBuild() == null) return;
 
-            //TODO: Save old build.
-            this.pn_heroInfo.Visible = true;
             startNewBuild();
         }
 
@@ -45,6 +59,7 @@ namespace HoNBuildPlanner
 
             HeroBuild build = HoNBP.ActualBuild();
             this.Text = "HoN Build Planner: " + build.BuildName();
+            this.pn_heroInfo.Visible = true;
 
             build.LevelUp();
             startHeroInfo();
@@ -352,6 +367,19 @@ namespace HoNBuildPlanner
         {
             SaveBuild();
         }
+        private void mi_LoadBuild_Click(object sender, EventArgs e)
+        {
+            if (HoNBP.ActualBuild() != null)
+            {
+                if (MessageBox.Show("Do you like to save your current build?", "There is another build loaded.", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    SaveBuild();
+                }
+            }
+
+            LoadBuild();
+        }
+
 
         private void SaveBuild()
         {
@@ -361,5 +389,25 @@ namespace HoNBuildPlanner
 
             MessageBox.Show("Your build has been saved to " + saveBuild.FileName);
         }
+
+        private void LoadBuild()
+        {
+            if (openBuild.ShowDialog() == DialogResult.Cancel) return;
+
+            HoNBP.LoadHeroFromFile(openBuild.FileName);
+
+            HoNBP.ActualBuild(HoNBP.NewBuild());
+
+            HeroBuild build = HoNBP.ActualBuild();
+            this.Text = "HoN Build Planner: " + build.BuildName();
+            this.pn_heroInfo.Visible = true;
+
+            build.LevelUp();
+            startHeroInfo();
+            updateAllHero();
+            changeBuildLevel(25);
+            lbox_choices.SelectedIndex = 24;
+        }
+
     }
 }

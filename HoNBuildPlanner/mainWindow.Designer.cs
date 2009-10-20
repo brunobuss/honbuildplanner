@@ -103,6 +103,7 @@
             this.lb_s_PrimaryAttr = new System.Windows.Forms.Label();
             this.main_tooltip = new System.Windows.Forms.ToolTip(this.components);
             this.saveBuild = new System.Windows.Forms.SaveFileDialog();
+            this.openBuild = new System.Windows.Forms.OpenFileDialog();
             this.mn_strip.SuspendLayout();
             this.pn_heroInfo.SuspendLayout();
             this.gb_levelup.SuspendLayout();
@@ -184,10 +185,10 @@
             // 
             // mi_LoadBuild
             // 
-            this.mi_LoadBuild.Enabled = false;
             this.mi_LoadBuild.Name = "mi_LoadBuild";
             this.mi_LoadBuild.Size = new System.Drawing.Size(152, 22);
             this.mi_LoadBuild.Text = "Load Build...";
+            this.mi_LoadBuild.Click += new System.EventHandler(this.mi_LoadBuild_Click);
             // 
             // mi_About
             // 
@@ -920,6 +921,13 @@
             this.saveBuild.Filter = "HBP Build|*.xml";
             this.saveBuild.Title = "Save Build...";
             // 
+            // openBuild
+            // 
+            this.openBuild.DefaultExt = "xml";
+            this.openBuild.FileName = "openFileDialog1";
+            this.openBuild.Filter = "HBP Build|*.xml";
+            this.openBuild.Title = "Load Build...";
+            // 
             // mainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1041,6 +1049,7 @@
         private System.Windows.Forms.ListBox lbox_choices;
         private System.Windows.Forms.Button btn_resetAll;
         private System.Windows.Forms.SaveFileDialog saveBuild;
+        private System.Windows.Forms.OpenFileDialog openBuild;
     }
 }
 

@@ -296,6 +296,45 @@ namespace HoNBuildPlanner
 
         static public void LoadHeroFromFile(String filepath)
         {
+            XmlReader reader = XmlReader.Create(filepath);
+
+            reader.ReadStartElement("HoNBuildPlanner");
+            reader.ReadStartElement("Build");
+
+            m_newBuild = new HeroBuild(reader.ReadElementString("Name"), getHeroByName(reader.ReadElementString("Hero")));
+            m_newBuild.MaxLevel(25);
+            m_newBuild.Level(25);
+
+            reader.ReadStartElement("Choices");
+            for (int i = 1; i <= 25; i++)
+            {
+                switch(reader.ReadElementString("Level" + i))
+                {
+                    case "Skill1":
+                        m_newBuild.Choice(i, LevelChoice.Skill1);
+                        break;
+                    case "Skill2":
+                        m_newBuild.Choice(i, LevelChoice.Skill2);
+                        break;
+                    case "Skill3":
+                        m_newBuild.Choice(i, LevelChoice.Skill3);
+                        break;
+                    case "SkillUltimate":
+                        m_newBuild.Choice(i, LevelChoice.SkillUltimate);
+                        break;
+                    case "AttributeBooster":
+                        m_newBuild.Choice(i, LevelChoice.AttributeBooster);
+                        break;
+                    default:
+                        m_newBuild.Choice(i, LevelChoice.Nothing);
+                        break;
+                }
+                
+            }
+            reader.ReadEndElement();
+            reader.ReadEndElement();
+            reader.ReadEndElement();
+
         }
 
         static public void SaveHeroToFile(String filepath)
