@@ -41,6 +41,7 @@
             this.mi_Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.pn_heroInfo = new System.Windows.Forms.Panel();
             this.gb_levelup = new System.Windows.Forms.GroupBox();
+            this.btn_resetAll = new System.Windows.Forms.Button();
             this.lbox_choices = new System.Windows.Forms.ListBox();
             this.lb_s_choices = new System.Windows.Forms.Label();
             this.pbox_skill4 = new System.Windows.Forms.PictureBox();
@@ -101,7 +102,7 @@
             this.lb_PrimaryAttr = new System.Windows.Forms.Label();
             this.lb_s_PrimaryAttr = new System.Windows.Forms.Label();
             this.main_tooltip = new System.Windows.Forms.ToolTip(this.components);
-            this.btn_resetAll = new System.Windows.Forms.Button();
+            this.saveBuild = new System.Windows.Forms.SaveFileDialog();
             this.mn_strip.SuspendLayout();
             this.pn_heroInfo.SuspendLayout();
             this.gb_levelup.SuspendLayout();
@@ -169,7 +170,7 @@
             // mi_NewBuild
             // 
             this.mi_NewBuild.Name = "mi_NewBuild";
-            this.mi_NewBuild.Size = new System.Drawing.Size(146, 22);
+            this.mi_NewBuild.Size = new System.Drawing.Size(152, 22);
             this.mi_NewBuild.Text = "New Build...";
             this.mi_NewBuild.Click += new System.EventHandler(this.mi_NewBuild_Click);
             // 
@@ -177,14 +178,15 @@
             // 
             this.mi_SaveBuild.Enabled = false;
             this.mi_SaveBuild.Name = "mi_SaveBuild";
-            this.mi_SaveBuild.Size = new System.Drawing.Size(146, 22);
+            this.mi_SaveBuild.Size = new System.Drawing.Size(152, 22);
             this.mi_SaveBuild.Text = "Save Build...";
+            this.mi_SaveBuild.Click += new System.EventHandler(this.mi_SaveBuild_Click);
             // 
             // mi_LoadBuild
             // 
             this.mi_LoadBuild.Enabled = false;
             this.mi_LoadBuild.Name = "mi_LoadBuild";
-            this.mi_LoadBuild.Size = new System.Drawing.Size(146, 22);
+            this.mi_LoadBuild.Size = new System.Drawing.Size(152, 22);
             this.mi_LoadBuild.Text = "Load Build...";
             // 
             // mi_About
@@ -238,6 +240,17 @@
             this.gb_levelup.TabIndex = 11;
             this.gb_levelup.TabStop = false;
             this.gb_levelup.Text = "Level Up";
+            // 
+            // btn_resetAll
+            // 
+            this.btn_resetAll.ForeColor = System.Drawing.Color.Black;
+            this.btn_resetAll.Location = new System.Drawing.Point(142, 455);
+            this.btn_resetAll.Name = "btn_resetAll";
+            this.btn_resetAll.Size = new System.Drawing.Size(75, 34);
+            this.btn_resetAll.TabIndex = 26;
+            this.btn_resetAll.Text = "Reset All";
+            this.btn_resetAll.UseVisualStyleBackColor = true;
+            this.btn_resetAll.Click += new System.EventHandler(this.btn_resetAll_Click);
             // 
             // lbox_choices
             // 
@@ -900,16 +913,12 @@
             this.lb_s_PrimaryAttr.TabIndex = 2;
             this.lb_s_PrimaryAttr.Text = "Primary Attribute:";
             // 
-            // btn_resetAll
+            // saveBuild
             // 
-            this.btn_resetAll.ForeColor = System.Drawing.Color.Black;
-            this.btn_resetAll.Location = new System.Drawing.Point(142, 455);
-            this.btn_resetAll.Name = "btn_resetAll";
-            this.btn_resetAll.Size = new System.Drawing.Size(75, 34);
-            this.btn_resetAll.TabIndex = 26;
-            this.btn_resetAll.Text = "Reset All";
-            this.btn_resetAll.UseVisualStyleBackColor = true;
-            this.btn_resetAll.Click += new System.EventHandler(this.btn_resetAll_Click);
+            this.saveBuild.CreatePrompt = true;
+            this.saveBuild.DefaultExt = "xml";
+            this.saveBuild.Filter = "HBP Build|*.xml";
+            this.saveBuild.Title = "Save Build...";
             // 
             // mainWindow
             // 
@@ -1031,6 +1040,7 @@
         private System.Windows.Forms.Label lb_s_choices;
         private System.Windows.Forms.ListBox lbox_choices;
         private System.Windows.Forms.Button btn_resetAll;
+        private System.Windows.Forms.SaveFileDialog saveBuild;
     }
 }
 

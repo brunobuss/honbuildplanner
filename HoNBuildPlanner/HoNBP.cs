@@ -294,5 +294,37 @@ namespace HoNBuildPlanner
             return m_actualBuild;
         }
 
+        static public void LoadHeroFromFile(String filepath)
+        {
+        }
+
+        static public void SaveHeroToFile(String filepath)
+        {
+            XmlWriterSettings settings = new XmlWriterSettings();
+            settings.Indent = true;
+            settings.IndentChars = ("    ");
+            XmlWriter writer = XmlWriter.Create(filepath, settings);
+
+            writer.WriteStartDocument();
+            writer.WriteStartElement("HoNBuildPlanner");
+            writer.WriteStartElement("Build");
+
+            writer.WriteElementString("Name", m_actualBuild.BuildName());
+            writer.WriteElementString("Hero", m_actualBuild.Name());
+
+            writer.WriteStartElement("Choices");
+
+            for (int i = 1; i <= 25; i++)
+            {
+                writer.WriteElementString("Level" + i, m_actualBuild.getChoiceType(i).ToString());
+            }
+
+            writer.WriteEndElement();
+            writer.WriteEndElement();
+            writer.WriteEndElement();
+
+            writer.Flush();
+            writer.Close();
+        }
     }
 }

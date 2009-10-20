@@ -73,6 +73,8 @@ namespace HoNBuildPlanner
             lb_PrimaryAttr.Text = build.PrimaryAttribute();
 
             pbox_hero.Load(build.Portrait());
+
+            mi_SaveBuild.Enabled = true;
         }
         private void updateAttributes()
         {
@@ -344,6 +346,20 @@ namespace HoNBuildPlanner
         private void btn_resetAll_Click(object sender, EventArgs e)
         {
             removeAllChoices();
+        }
+
+        private void mi_SaveBuild_Click(object sender, EventArgs e)
+        {
+            SaveBuild();
+        }
+
+        private void SaveBuild()
+        {
+            if (saveBuild.ShowDialog() == DialogResult.Cancel) return;
+
+            HoNBP.SaveHeroToFile(saveBuild.FileName);
+
+            MessageBox.Show("Your build has been saved to " + saveBuild.FileName);
         }
     }
 }
