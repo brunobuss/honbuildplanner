@@ -1,1 +1,76 @@
-﻿
+﻿=== For HoN Build Planner (v 0.1) ===
+Save Build feature - DONE
+Load Build feature - DONE
+
+Create exception handlers and custom window.
+Create About window.
+HoN Forum BBCode Export.
+
+Heroes at heroes.xml:
+Night Hound - NOT
+Swiftblade - NOT
+Moon Queen - NOT
+Wildsoul - NOT
+Zephyr - NOT
+Magebane - NOT
+Scout - NOT
+Andromeda - NOT
+Valkyrie - NOT
+Blacksmith - NOT
+Nymphora - NOT
+Glacius - YES
+Thunderbringer - NOT
+Pollywog Priest - NOT
+Tempest - NOT
+Ophellia - NOT
+Pyromancer - NOT
+Armadon - NOT
+Behemoth - NOT
+Hammerstorm - NOT
+Pebbles - NOT
+Keeper of the Forest - NOT
+Legionnaire - NOT
+Predator - NOT
+Jeraziah - NOT
+Pandamonium - NOT
+Chronos - NOT
+Silther - NOT
+Blood Hunter - NOT
+Soulstealer - NOT
+The Dark Lady - NOT
+The Madman - NOT
+Arachna - NOT
+Sand Wraith - NOT
+Defiler - NOT
+Demented Shaman - NOT
+Voodoo Jester - NOT
+Puppet Master - NOT
+Hellbringer - NOT
+Torturer - NOT
+Wretched Hag - NOT
+Succubus - NOT
+Plague Raider - NOT
+Soul Reaper - NOT
+Devourer - YES
+Electrician - YES
+Kraken - YES
+War Beast - NOT
+Pharaoh - NOT
+Accursed - YES
+Pestilence - NOT
+Maliken - NOT
+Magmus - NOT
+
+
+=== Next things ===
+Items
+Skill Effects
+
+=== In a galaxy far far away... ===
+Builds Compare
+DPS Analyzer
+Cool graphics :P
+
+=== Users suggestions ===
+Integrate with some web system.
+Export to encyclopedia-mod format.
