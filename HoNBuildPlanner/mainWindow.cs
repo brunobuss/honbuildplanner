@@ -409,5 +409,11 @@ namespace HoNBuildPlanner
             lbox_choices.SelectedIndex = 24;
         }
 
+        private void mi_About_Click(object sender, EventArgs e)
+        {
+            aboutHBP aboutWindow = new aboutHBP();
+            aboutWindow.ShowDialog();
+        }
+
     }
 }

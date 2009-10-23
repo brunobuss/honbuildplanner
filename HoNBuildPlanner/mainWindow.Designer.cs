@@ -171,7 +171,7 @@
             // mi_NewBuild
             // 
             this.mi_NewBuild.Name = "mi_NewBuild";
-            this.mi_NewBuild.Size = new System.Drawing.Size(152, 22);
+            this.mi_NewBuild.Size = new System.Drawing.Size(146, 22);
             this.mi_NewBuild.Text = "New Build...";
             this.mi_NewBuild.Click += new System.EventHandler(this.mi_NewBuild_Click);
             // 
@@ -179,23 +179,23 @@
             // 
             this.mi_SaveBuild.Enabled = false;
             this.mi_SaveBuild.Name = "mi_SaveBuild";
-            this.mi_SaveBuild.Size = new System.Drawing.Size(152, 22);
+            this.mi_SaveBuild.Size = new System.Drawing.Size(146, 22);
             this.mi_SaveBuild.Text = "Save Build...";
             this.mi_SaveBuild.Click += new System.EventHandler(this.mi_SaveBuild_Click);
             // 
             // mi_LoadBuild
             // 
             this.mi_LoadBuild.Name = "mi_LoadBuild";
-            this.mi_LoadBuild.Size = new System.Drawing.Size(152, 22);
+            this.mi_LoadBuild.Size = new System.Drawing.Size(146, 22);
             this.mi_LoadBuild.Text = "Load Build...";
             this.mi_LoadBuild.Click += new System.EventHandler(this.mi_LoadBuild_Click);
             // 
             // mi_About
             // 
-            this.mi_About.Enabled = false;
             this.mi_About.Name = "mi_About";
             this.mi_About.Size = new System.Drawing.Size(48, 20);
             this.mi_About.Text = "About";
+            this.mi_About.Click += new System.EventHandler(this.mi_About_Click);
             // 
             // mi_Exit
             // 
