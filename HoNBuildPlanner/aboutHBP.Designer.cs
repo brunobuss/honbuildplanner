@@ -124,7 +124,7 @@
             this.labelWebSite.Size = new System.Drawing.Size(271, 17);
             this.labelWebSite.TabIndex = 22;
             this.labelWebSite.TabStop = true;
-            this.labelWebSite.Text = "webSite";
+            this.labelWebSite.Text = "http://github.com/brunobuss/honbuildplanner";
             this.labelWebSite.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelWebSite.VisitedLinkColor = System.Drawing.Color.Blue;
             // 

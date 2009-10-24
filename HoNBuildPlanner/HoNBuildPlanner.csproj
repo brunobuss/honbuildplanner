@@ -78,6 +78,12 @@
       <DependentUpon>aboutHBP.cs</DependentUpon>
     </Compile>
     <Compile Include="enums.cs" />
+    <Compile Include="exceptionWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="exceptionWindow.Designer.cs">
+      <DependentUpon>exceptionWindow.cs</DependentUpon>
+    </Compile>
     <Compile Include="globals.cs" />
     <Compile Include="HeroBuild.cs" />
     <Compile Include="Hero.cs" />
@@ -132,6 +138,9 @@
     </Content>
     <EmbeddedResource Include="aboutHBP.resx">
       <DependentUpon>aboutHBP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="exceptionWindow.resx">
+      <DependentUpon>exceptionWindow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="imgs\heroes\accursed.jpeg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>

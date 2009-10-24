@@ -1,10 +1,11 @@
 ﻿=== For HoN Build Planner (v 0.1) ===
 Save Build feature - DONE
 Load Build feature - DONE
+Create About window - DONE
+Custom exception window - DONE
 
-Create exception handlers and custom window.
-Create About window.
-HoN Forum BBCode Export.
+Create exception handlers
+HoN Forum BBCode Export
 
 Heroes at heroes.xml:
 Night Hound - NOT
