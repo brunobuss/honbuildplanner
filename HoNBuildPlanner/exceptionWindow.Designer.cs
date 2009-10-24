@@ -124,6 +124,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "exceptionWindow";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Oops! Looks like something DENIED you =/";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.exceptionWindow_FormClosed);
             ((System.ComponentModel.ISupportInitialize)(this.pbox_behemot)).EndInit();

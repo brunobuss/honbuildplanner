@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HoNBuildPlanner>
+  <Hero>
+    <Name>Electrician</Name>
+    <PrimaryAttribute>Strength</PrimaryAttribute>
+    <InitialHP>150</InitialHP>
+    <InitialHPRegen>0.25</InitialHPRegen>
+    <InitialMana>0</InitialMana>
+    <InitialManaRegen>0.01</InitialManaRegen>
+    <InitialAttirbutes>
+      <Strength>23</Strength>
+      <Agility>15</Agility>
+      <Intelligence>25</Intelligence>
+    </InitialAttirbutes>
+    <MovementSpeed>300</MovementSpeed>
+    <PerLevel>
+      <Strength>2.4</Strength>
+      <Agility>2.0</Agility>
+      <Intelligence>1.3</Intelligence>
+    </PerLevel>
+    <Armor>0.0</Armor>
+    <MagicArmor>5.5</MagicArmor>
+    <AttackType>Melee</AttackType>
+    <MinDamage>30</MinDamage>
+    <MaxDamage>38</MaxDamage>
+    <Range>100</Range>
+    <BAT>1.7</BAT>
+    <Skills>
+      <Skill>
+        <Name>Static Grip</Name>
+        <Lore>The Electrician binds a target in a static grip, preventing them from casting spells, moving, attacking, or using items for a short time. The Electrician is dragged slowly toward the target.</Lore>
+        <image>staticgrip</image>
+      </Skill>
+      <Skill>
+        <Name>Electric Shield</Name>
+        <Lore>The electrician uses electricity to create a shield around himself. The shield will negate a portion of incoming damage at the cost of Electrician's Mana.</Lore>
+        <image>electricshield</image>
+      </Skill>
+      <Skill>
+        <Name>Energy Absorption</Name>
+        <Lore>The Electrician discharges energy around him. Nearby enemies are damaged and have their Mana drained. For each enemy with Mana drained, the Electrician absorbs some Mana, gets a boost to his Magic Armor and a boost to Physical Armor.</Lore>
+        <image>energyabsorption</image>
+      </Skill>
+      <Skill>
+        <Name>Cleansing Shock</Name>
+        <Lore>Electrician shocks a target unit, removing debuffs and increasing movement speed if the target is an ally, or removing buffs and decreasing movement speed if target is an enemy.</Lore>
+        <image>cleansingshock</image>
+      </Skill>
+    </Skills>
+    <portrait>electrician</portrait>
+  </Hero>
+</HoNBuildPlanner>

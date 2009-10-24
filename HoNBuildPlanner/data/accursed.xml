@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HoNBuildPlanner>
+  <Hero>
+    <Name>Accursed</Name>
+    <PrimaryAttribute>Strength</PrimaryAttribute>
+    <InitialHP>150</InitialHP>
+    <InitialHPRegen>0.25</InitialHPRegen>
+    <InitialMana>0</InitialMana>
+    <InitialManaRegen>0.01</InitialManaRegen>
+    <InitialAttirbutes>
+      <Strength>23</Strength>
+      <Agility>17</Agility>
+      <Intelligence>21</Intelligence>
+    </InitialAttirbutes>
+    <MovementSpeed>300</MovementSpeed>
+    <PerLevel>
+      <Strength>2.7</Strength>
+      <Agility>1.5</Agility>
+      <Intelligence>2.0</Intelligence>
+    </PerLevel>
+    <Armor>2.0</Armor>
+    <MagicArmor>5.0</MagicArmor>
+    <AttackType>Melee</AttackType>
+    <MinDamage>31</MinDamage>
+    <MaxDamage>33</MaxDamage>
+    <Range>110</Range>
+    <BAT>1.7</BAT>
+    <Skills>
+      <Skill>
+        <Name>Cauterize</Name>
+        <Lore>At the cost of some of his own Health, Accursed bursts the air around a target, dealing damage to them if they are an enemy or healing them if they are an ally.</Lore>
+        <image>cauterize</image>
+      </Skill>
+      <Skill>
+        <Name>Fire Shield</Name>
+        <Lore>Accursed covers a friendly unit in a shield of flames protecting them from damage and removing harmful effects. If the shield is damaged to its breaking point, it will explode, dealing Magical damage to nearby enemies equal to that of the damage absorbed.</Lore>
+        <image>fireshield</image>
+      </Skill>
+      <Skill>
+        <Name>Sear</Name>
+        <Lore>Causes Accursed's attacks to sear his target, slowing their movement speed. Any ally that attacks the affected unit will be buffed with increased attack speed and movement speed.</Lore>
+        <image>sear</image>
+      </Skill>
+      <Skill>
+        <Name>Flame Consumption</Name>
+        <Lore>Accursed summons a powerful fire tornado around himself which, when fueled with damage, causes him to regain his life. When not in cooldown, this ability automatically activates when The Accursed drops below 400 Health.</Lore>
+        <image>flameconsumption</image>
+      </Skill>
+    </Skills>
+    <portrait>accursed</portrait>
+  </Hero>
+</HoNBuildPlanner>

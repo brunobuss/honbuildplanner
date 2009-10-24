@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HoNBuildPlanner>
+  <Hero>
+    <Name>Glacius</Name>
+    <PrimaryAttribute>Intelligence</PrimaryAttribute>
+    <InitialHP>150</InitialHP>
+    <InitialHPRegen>0.25</InitialHPRegen>
+    <InitialMana>0</InitialMana>
+    <InitialManaRegen>0.01</InitialManaRegen>
+    <InitialAttirbutes>
+      <Strength>16</Strength>
+      <Agility>16</Agility>
+      <Intelligence>21</Intelligence>
+    </InitialAttirbutes>
+    <MovementSpeed>280</MovementSpeed>
+    <PerLevel>
+      <Strength>1.7</Strength>
+      <Agility>1.6</Agility>
+      <Intelligence>2.9</Intelligence>
+    </PerLevel>
+    <Armor>-1.0</Armor>
+    <MagicArmor>5.5</MagicArmor>
+    <AttackType>Ranged</AttackType>
+    <MinDamage>17</MinDamage>
+    <MaxDamage>23</MaxDamage>
+    <Range>600</Range>
+    <BAT>1.7</BAT>
+    <Skills>
+      <Skill>
+        <Name>Tundra Blast</Name>
+        <Lore>Glacius assaults a group of enemies with an explosion of ice. All enemies hit by the explosion are damaged and have their movement and attack speed slowed.</Lore>
+        <image>tundrablast</image>
+      </Skill>
+      <Skill>
+        <Name>Ice Imprisonment</Name>
+        <Lore>Glacius encases a target enemy unit in ice. The target unit is frozen solid, rendering it unable to move or attack. The target unit takes damage over time while frozen.</Lore>
+        <image>iceimprisonment</image>
+      </Skill>
+      <Skill>
+        <Name>Chilling Presence</Name>
+        <Lore>Glacius helps his allies remain cool in the face of danger, giving them a clear and calm mind. Increases Mana regeneration to all allied Heroes no matter where they are on the map.</Lore>
+        <image>chillingpresence</image>
+      </Skill>
+      <Skill>
+        <Name>Glacial Downpour</Name>
+        <Lore>Glacius showers the area around him with shards of ice. The shards will randomly strike around Glacius, slowing the attack and movement speed of nearby enemies and dealing intense damage to them.</Lore>
+        <image>glacialdownpour</image>
+      </Skill>
+    </Skills>
+    <portrait>glacius</portrait>
+  </Hero>
+</HoNBuildPlanner>

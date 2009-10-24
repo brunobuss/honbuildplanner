@@ -171,7 +171,7 @@ namespace HoNBuildPlanner
         }
         public string Portrait()
         {
-            return "./imgs/heroes/" + m_PortraitFileName;
+            return "./imgs/heroes/" + m_PortraitFileName + ".jpeg";
         }
 
         public Skill Skill(int number)

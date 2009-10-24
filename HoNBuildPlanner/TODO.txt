@@ -3,8 +3,8 @@ Save Build feature - DONE
 Load Build feature - DONE
 Create About window - DONE
 Custom exception window - DONE
+Create exception handlers - Some of them :P
 
-Create exception handlers
 HoN Forum BBCode Export
 
 Heroes at heroes.xml:

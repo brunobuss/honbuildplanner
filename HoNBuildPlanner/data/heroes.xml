@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HoNBuildPlanner>
+  <HeroList>
+    <File>accursed.xml</File>
+    <File>devourer.xml</File>
+    <File>electrician.xml</File>
+    <File>glacius.xml</File>
+    <File>kraken.xml</File>
+  </HeroList>
+</HoNBuildPlanner>

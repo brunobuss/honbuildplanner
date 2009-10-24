@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HoNBuildPlanner>
+  <Hero>
+    <Name>Devourer</Name>
+    <PrimaryAttribute>Strength</PrimaryAttribute>
+    <InitialHP>150</InitialHP>
+    <InitialHPRegen>0.25</InitialHPRegen>
+    <InitialMana>0</InitialMana>
+    <InitialManaRegen>0.01</InitialManaRegen>
+    <InitialAttirbutes>
+      <Strength>25</Strength>
+      <Agility>14</Agility>
+      <Intelligence>14</Intelligence>
+    </InitialAttirbutes>
+    <MovementSpeed>285</MovementSpeed>
+    <PerLevel>
+      <Strength>3.2</Strength>
+      <Agility>1.5</Agility>
+      <Intelligence>1.5</Intelligence>
+    </PerLevel>
+    <Armor>0.0</Armor>
+    <MagicArmor>5.5</MagicArmor>
+    <AttackType>Melee</AttackType>
+    <MinDamage>27</MinDamage>
+    <MaxDamage>33</MaxDamage>
+    <Range>128</Range>
+    <BAT>1.7</BAT>
+    <Skills>
+      <Skill>
+        <Name>Guttling Hook</Name>
+        <Lore>The Devourer launches his Guttling Hook at a target unit or location. The first targetable unit that touches the hook will be dragged back to the Devourer.</Lore>
+        <image>guttlinghook</image>
+      </Skill>
+      <Skill>
+        <Name>Decay</Name>
+        <Lore>The Devourer allows himself to decay, draining his Health over time and releasing poisonous gasses that both damage and slow nearby enemy units.</Lore>
+        <image>decay</image>
+      </Skill>
+      <Skill>
+        <Name>Cadaver Armor</Name>
+        <Lore>This grotesque armor increases the Devourer's Magic Armor and permanently adds {0.9,1.2,1.5,1.8} strength for each hero kill and {0.03,0.06,0.09,0.12} strength for each creep kill he makes.</Lore>
+        <image>cadaverarmor</image>
+      </Skill>
+      <Skill>
+        <Name>Devour</Name>
+        <Lore>The Devourer grabs a target enemy and feasts on their flesh, dealing massive damage for every second he feeds.</Lore>
+        <image>devour</image>
+      </Skill>
+    </Skills>
+    <portrait>devourer</portrait>
+  </Hero>
+</HoNBuildPlanner>

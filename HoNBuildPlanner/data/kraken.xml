@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HoNBuildPlanner>
+  <Hero>
+    <Name>Kraken</Name>
+    <PrimaryAttribute>Strength</PrimaryAttribute>
+    <InitialHP>150</InitialHP>
+    <InitialHPRegen>0.25</InitialHPRegen>
+    <InitialMana>0</InitialMana>
+    <InitialManaRegen>0.01</InitialManaRegen>
+    <InitialAttirbutes>
+      <Strength>22</Strength>
+      <Agility>15</Agility>
+      <Intelligence>16</Intelligence>
+    </InitialAttirbutes>
+    <MovementSpeed>310</MovementSpeed>
+    <PerLevel>
+      <Strength>3</Strength>
+      <Agility>1.5</Agility>
+      <Intelligence>1.7</Intelligence>
+    </PerLevel>
+    <Armor>1.0</Armor>
+    <MagicArmor>5.5</MagicArmor>
+    <AttackType>Melee</AttackType>
+    <MinDamage>25</MinDamage>
+    <MaxDamage>31</MaxDamage>
+    <Range>125</Range>
+    <BAT>1.7</BAT>
+    <Skills>
+      <Skill>
+        <Name>Splash</Name>
+        <Lore>When attacking, Kraken unleashes a mighty attack that damages nearby enemies.</Lore>
+        <image>splash</image>
+      </Skill>
+      <Skill>
+        <Name>Tsunami Charge</Name>
+        <Lore>Kraken charges toward a target location with great strength and speed, damaging and knocking aside enemies in his path.</Lore>
+        <image>tsunamicharge</image>
+      </Skill>
+      <Skill>
+        <Name>Tidal Pull</Name>
+        <Lore>Kraken's presence slows nearby enemies with a continuous tidal pull.</Lore>
+        <image>tidalpull</image>
+      </Skill>
+      <Skill>
+        <Name>Whirlpool</Name>
+        <Lore>Kraken forms two connected whirlpools, one at a target location and one around himself. After a short time, the whirlpool near Kraken sucks everyone in and spits them out at the targeted location. Enemies are damaged in the process.</Lore>
+        <image>whirlpool</image>
+      </Skill>
+    </Skills>
+    <portrait>kraken</portrait>    
+  </Hero>
+</HoNBuildPlanner>

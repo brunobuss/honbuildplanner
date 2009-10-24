@@ -16,8 +16,9 @@ namespace HoNBuildPlanner
         static private HeroBuild m_newBuild;
 
 
-        static public void loadHeroesFromFile(string fileName)
+        static public void loadHeroesFromFile()
         {
+            ArrayList xml_list = new ArrayList();
             Heroes = new Hashtable();
             Hero newHero;
             Skill[] heroSkills;
@@ -54,202 +55,20 @@ namespace HoNBuildPlanner
             float heroBAT;
 
 
+            //Loading xml list file
             try
             {
-                XmlReader reader = XmlReader.Create(fileName);
+                XmlReader reader = XmlReader.Create("./data/heroes.xml");
 
                 reader.ReadStartElement("HoNBuildPlanner");
+                reader.ReadStartElement("HeroList");
 
-                while (reader.IsStartElement("Hero"))
+                while (reader.IsStartElement("File"))
                 {
-                    heroSkills = new Skill[4];
-
-
-                    reader.ReadStartElement("Hero");
-
-
-                    reader.ReadStartElement("Name");
-                    heroName = reader.ReadString();
-                    reader.ReadEndElement();
-
-
-                    reader.ReadStartElement("PrimaryAttribute");
-                    temp = reader.ReadString();
-                    reader.ReadEndElement();
-
-                    switch (temp)
-                    {
-                        case "Strength":
-                            heroPrim = HeroPrimaryAttr.Strength;
-                            break;
-                        case "Agility":
-                            heroPrim = HeroPrimaryAttr.Agility;
-                            break;
-                        case "Intelligence":
-                            heroPrim = HeroPrimaryAttr.Intelligence;
-                            break;
-                        default:
-                            heroPrim = HeroPrimaryAttr.Strength;
-                            break;
-                    }
-
-
-
-
-                    reader.ReadStartElement("InitialHP");
-                    heroInitialHP = int.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-                    reader.ReadStartElement("InitialHPRegen");
-                    heroInitialHPRegen = float.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-                    reader.ReadStartElement("InitialMana");
-                    heroInitialMana = int.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-                    reader.ReadStartElement("InitialManaRegen");
-                    heroInitialManaRegen = float.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-
-
-
-                    reader.ReadStartElement("InitialAttirbutes");
-
-                    reader.ReadStartElement("Strength");
-                    heroIStr = int.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-                    reader.ReadStartElement("Agility");
-                    heroIAgi = int.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-                    reader.ReadStartElement("Intelligence");
-                    heroIInt = int.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-                    reader.ReadEndElement();
-
-
-
-                    reader.ReadStartElement("MovementSpeed");
-                    heroMovS = int.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-
-
-                    reader.ReadStartElement("PerLevel");
-
-                    reader.ReadStartElement("Strength");
-                    heroStrPerLevel = float.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-                    reader.ReadStartElement("Agility");
-                    heroAgiPerLevel = float.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-                    reader.ReadStartElement("Intelligence");
-                    heroIntPerLevel = float.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-                    reader.ReadEndElement();
-
-
-                    reader.ReadStartElement("Armor");
-                    heroArmor = float.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-
-                    reader.ReadStartElement("MagicArmor");
-                    heroMagicArmor = float.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-
-                    reader.ReadStartElement("AttackType");
-                    temp = reader.ReadString();
-                    reader.ReadEndElement();
-
-                    switch (temp)
-                    {
-                        case "Melee":
-                            heroAttackType = HeroAttackType.Melee;
-                            break;
-                        case "Ranged":
-                            heroAttackType = HeroAttackType.Ranged;
-                            break;
-                        default:
-                            heroAttackType = HeroAttackType.Melee;
-                            break;
-                    }
-
-
-
-                    reader.ReadStartElement("MinDamage");
-                    heroMinDamage = int.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-
-                    reader.ReadStartElement("MaxDamage");
-                    heroMaxDamage = int.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-
-                    reader.ReadStartElement("Range");
-                    heroAttackRange = int.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-
-                    reader.ReadStartElement("BAT");
-                    heroBAT = float.Parse(reader.ReadString());
-                    reader.ReadEndElement();
-
-
-                    reader.ReadStartElement("Skills");
-
-                    for (int i = 0; i < 4; i++)
-                    {
-                        reader.ReadStartElement("Skill");
-
-                        reader.ReadStartElement("Name");
-                        temp = reader.ReadString();
-                        reader.ReadEndElement();
-
-                        reader.ReadStartElement("Lore");
-                        temp2 = reader.ReadString();
-                        reader.ReadEndElement();
-                        heroSkills[i] = new Skill(temp, temp2);
-
-                        reader.ReadStartElement("normalimage");
-                        temp = reader.ReadString();
-                        reader.ReadEndElement();
-
-                        heroSkills[i].setImage(temp);
-
-                        reader.ReadEndElement();
-                    }
-
-                    reader.ReadEndElement();
-
-                    reader.ReadStartElement("portrait");
-                    heroPortrait = reader.ReadString();
-                    reader.ReadEndElement();
-
-
-
-                    reader.ReadEndElement();
-
-                    newHero = new Hero(heroName, heroPrim, heroIStr, heroIAgi, heroIInt, heroInitialHP, heroInitialHPRegen,
-                                        heroInitialMana, heroInitialManaRegen, heroMovS, heroStrPerLevel, heroAgiPerLevel,
-                                        heroIntPerLevel, heroArmor, heroMagicArmor, heroAttackType,
-                                        heroMinDamage, heroMaxDamage, heroAttackRange, heroBAT,
-                                        heroSkills[0], heroSkills[1], heroSkills[2], heroSkills[3]);
-
-                    newHero.Portrait(heroPortrait);
-
-                    Heroes.Add(heroName, newHero);
+                    xml_list.Add(reader.ReadElementString("File"));
                 }
 
+                reader.ReadEndElement();
                 reader.ReadEndElement();
                 reader.Close();
             }
@@ -258,6 +77,219 @@ namespace HoNBuildPlanner
                 exceptionWindow ew = new exceptionWindow(ex.ToString());
                 ew.ShowDialog();
             }
+
+            //Parsing heroes xml files
+
+            while (xml_list.Count > 0)
+            {
+                try
+                {
+                    XmlReader reader = XmlReader.Create("./data/" + xml_list[0].ToString());
+
+                    reader.ReadStartElement("HoNBuildPlanner");
+
+                    while (reader.IsStartElement("Hero"))
+                    {
+                        heroSkills = new Skill[4];
+
+
+                        reader.ReadStartElement("Hero");
+
+
+                        reader.ReadStartElement("Name");
+                        heroName = reader.ReadString();
+                        reader.ReadEndElement();
+
+
+                        reader.ReadStartElement("PrimaryAttribute");
+                        temp = reader.ReadString();
+                        reader.ReadEndElement();
+
+                        switch (temp)
+                        {
+                            case "Strength":
+                                heroPrim = HeroPrimaryAttr.Strength;
+                                break;
+                            case "Agility":
+                                heroPrim = HeroPrimaryAttr.Agility;
+                                break;
+                            case "Intelligence":
+                                heroPrim = HeroPrimaryAttr.Intelligence;
+                                break;
+                            default:
+                                heroPrim = HeroPrimaryAttr.Strength;
+                                break;
+                        }
+
+
+
+
+                        reader.ReadStartElement("InitialHP");
+                        heroInitialHP = int.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+                        reader.ReadStartElement("InitialHPRegen");
+                        heroInitialHPRegen = float.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+                        reader.ReadStartElement("InitialMana");
+                        heroInitialMana = int.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+                        reader.ReadStartElement("InitialManaRegen");
+                        heroInitialManaRegen = float.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+
+
+
+                        reader.ReadStartElement("InitialAttirbutes");
+
+                        reader.ReadStartElement("Strength");
+                        heroIStr = int.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+                        reader.ReadStartElement("Agility");
+                        heroIAgi = int.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+                        reader.ReadStartElement("Intelligence");
+                        heroIInt = int.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+                        reader.ReadEndElement();
+
+
+
+                        reader.ReadStartElement("MovementSpeed");
+                        heroMovS = int.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+
+
+                        reader.ReadStartElement("PerLevel");
+
+                        reader.ReadStartElement("Strength");
+                        heroStrPerLevel = float.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+                        reader.ReadStartElement("Agility");
+                        heroAgiPerLevel = float.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+                        reader.ReadStartElement("Intelligence");
+                        heroIntPerLevel = float.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+                        reader.ReadEndElement();
+
+
+                        reader.ReadStartElement("Armor");
+                        heroArmor = float.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+
+                        reader.ReadStartElement("MagicArmor");
+                        heroMagicArmor = float.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+
+                        reader.ReadStartElement("AttackType");
+                        temp = reader.ReadString();
+                        reader.ReadEndElement();
+
+                        switch (temp)
+                        {
+                            case "Melee":
+                                heroAttackType = HeroAttackType.Melee;
+                                break;
+                            case "Ranged":
+                                heroAttackType = HeroAttackType.Ranged;
+                                break;
+                            default:
+                                heroAttackType = HeroAttackType.Melee;
+                                break;
+                        }
+
+
+
+                        reader.ReadStartElement("MinDamage");
+                        heroMinDamage = int.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+
+                        reader.ReadStartElement("MaxDamage");
+                        heroMaxDamage = int.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+
+                        reader.ReadStartElement("Range");
+                        heroAttackRange = int.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+
+                        reader.ReadStartElement("BAT");
+                        heroBAT = float.Parse(reader.ReadString());
+                        reader.ReadEndElement();
+
+
+                        reader.ReadStartElement("Skills");
+
+                        for (int i = 0; i < 4; i++)
+                        {
+                            reader.ReadStartElement("Skill");
+
+                            reader.ReadStartElement("Name");
+                            temp = reader.ReadString();
+                            reader.ReadEndElement();
+
+                            reader.ReadStartElement("Lore");
+                            temp2 = reader.ReadString();
+                            reader.ReadEndElement();
+                            heroSkills[i] = new Skill(temp, temp2);
+
+                            reader.ReadStartElement("image");
+                            temp = reader.ReadString();
+                            reader.ReadEndElement();
+
+                            heroSkills[i].setImage(temp);
+
+                            reader.ReadEndElement();
+                        }
+
+                        reader.ReadEndElement();
+
+                        reader.ReadStartElement("portrait");
+                        heroPortrait = reader.ReadString();
+                        reader.ReadEndElement();
+
+
+
+                        reader.ReadEndElement();
+
+                        newHero = new Hero(heroName, heroPrim, heroIStr, heroIAgi, heroIInt, heroInitialHP, heroInitialHPRegen,
+                                            heroInitialMana, heroInitialManaRegen, heroMovS, heroStrPerLevel, heroAgiPerLevel,
+                                            heroIntPerLevel, heroArmor, heroMagicArmor, heroAttackType,
+                                            heroMinDamage, heroMaxDamage, heroAttackRange, heroBAT,
+                                            heroSkills[0], heroSkills[1], heroSkills[2], heroSkills[3]);
+
+                        newHero.Portrait(heroPortrait);
+
+                        Heroes.Add(heroName, newHero);
+                    }
+
+                    reader.ReadEndElement();
+                    reader.Close();
+                }
+                catch (Exception ex)
+                {
+                    exceptionWindow ew = new exceptionWindow(ex.ToString());
+                    ew.ShowDialog();
+                }
+
+                xml_list.RemoveAt(0);
+            }
+
 
 
 

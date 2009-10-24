@@ -15,7 +15,7 @@ namespace HoNBuildPlanner
         public mainWindow()
         {
             InitializeComponent();
-            HoNBP.loadHeroesFromFile("heroes.xml");
+            HoNBP.loadHeroesFromFile();
             this.pn_heroInfo.Visible = false;
 
             try
