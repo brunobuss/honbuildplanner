@@ -18,7 +18,15 @@ namespace HoNBuildPlanner
             HoNBP.loadHeroesFromFile("heroes.xml");
             this.pn_heroInfo.Visible = false;
 
-            pbox_attrboost.Load("./imgs/other/attrboost.png");
+            try
+            {
+                pbox_attrboost.Load("./imgs/other/attrboost.png");
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
         }
 
         private void mi_Exit_Click(object sender, EventArgs e)
@@ -33,7 +41,6 @@ namespace HoNBuildPlanner
 
             Application.Exit();
         }
-
         private void mi_NewBuild_Click(object sender, EventArgs e)
         {
             if (HoNBP.ActualBuild() != null)
@@ -52,6 +59,117 @@ namespace HoNBuildPlanner
 
             startNewBuild();
         }
+        private void lbox_choices_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            changeBuildLevel(lbox_choices.SelectedIndex + 1);
+        }
+        private void pbox_skill1_Click(object sender, EventArgs e)
+        {
+            if (isActualChoice(LevelChoice.Skill1))
+            {
+                removeChoice();
+            }
+            else
+            {
+                buildLevelUp(LevelChoice.Skill1);
+            }
+        }
+        private void pbox_skill2_Click(object sender, EventArgs e)
+        {
+            if (isActualChoice(LevelChoice.Skill2))
+            {
+                removeChoice();
+            }
+            else
+            {
+                buildLevelUp(LevelChoice.Skill2);
+            }
+        }
+        private void pbox_skill3_Click(object sender, EventArgs e)
+        {
+            if (isActualChoice(LevelChoice.Skill3))
+            {
+                removeChoice();
+            }
+            else
+            {
+                buildLevelUp(LevelChoice.Skill3);
+            }
+        }
+        private void pbox_skill4_Click(object sender, EventArgs e)
+        {
+            if (isActualChoice(LevelChoice.SkillUltimate))
+            {
+                removeChoice();
+            }
+            else
+            {
+                buildLevelUp(LevelChoice.SkillUltimate);
+            }
+        }
+        private void pbox_attrboost_Click(object sender, EventArgs e)
+        {
+            if (isActualChoice(LevelChoice.AttributeBooster))
+            {
+                removeChoice();
+            }
+            else
+            {
+                buildLevelUp(LevelChoice.AttributeBooster);
+            }
+        }
+        private void btn_resetAll_Click(object sender, EventArgs e)
+        {
+            removeAllChoices();
+        }
+        private void mi_SaveBuild_Click(object sender, EventArgs e)
+        {
+            SaveBuild();
+        }
+        private void mi_LoadBuild_Click(object sender, EventArgs e)
+        {
+            if (HoNBP.ActualBuild() != null)
+            {
+                if (MessageBox.Show("Do you like to save your current build?", "There is another build loaded.", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    SaveBuild();
+                }
+            }
+
+            LoadBuild();
+        }
+        private void mi_About_Click(object sender, EventArgs e)
+        {
+            aboutHBP aboutWindow = new aboutHBP();
+            aboutWindow.ShowDialog();
+        }
+
+        private void SaveBuild()
+        {
+            if (saveBuild.ShowDialog() == DialogResult.Cancel) return;
+
+            HoNBP.SaveHeroToFile(saveBuild.FileName);
+
+            MessageBox.Show("Your build has been saved to " + saveBuild.FileName);
+        }
+        private void LoadBuild()
+        {
+            if (openBuild.ShowDialog() == DialogResult.Cancel) return;
+
+            HoNBP.LoadHeroFromFile(openBuild.FileName);
+
+            HoNBP.ActualBuild(HoNBP.NewBuild());
+
+            HeroBuild build = HoNBP.ActualBuild();
+            this.Text = "HoN Build Planner: " + build.BuildName();
+            this.pn_heroInfo.Visible = true;
+
+            build.LevelUp();
+            startHeroInfo();
+            updateAllHero();
+            changeBuildLevel(25);
+            lbox_choices.SelectedIndex = 24;
+        }
 
         private void startNewBuild()
         {
@@ -66,7 +184,7 @@ namespace HoNBuildPlanner
             updateAllHero();
             changeBuildLevel(1);
             lbox_choices.SelectedIndex = 0;
-            
+
 
 
         }
@@ -239,181 +357,162 @@ namespace HoNBuildPlanner
         private void turnonSkill1()
         {
             HeroBuild build = HoNBP.ActualBuild();
-            pbox_skill1.Load(build.SkillImage(1));
+
+            try
+            {
+                pbox_skill1.Load(build.SkillImage(1));
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
+
             pbox_skill1.Enabled = true;
         }
         private void turnoffSkill1()
         {
             HeroBuild build = HoNBP.ActualBuild();
-            pbox_skill1.Load(build.SkillGreyedImage(1));
+
+            try
+            {
+                pbox_skill1.Load(build.SkillGreyedImage(1));
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
+
             pbox_skill1.Enabled = false;
         }
         private void turnonSkill2()
         {
             HeroBuild build = HoNBP.ActualBuild();
-            pbox_skill2.Load(build.SkillImage(2));
+
+            try
+            {
+                pbox_skill2.Load(build.SkillImage(2));
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
+
             pbox_skill2.Enabled = true;
         }
         private void turnoffSkill2()
         {
             HeroBuild build = HoNBP.ActualBuild();
-            pbox_skill2.Load(build.SkillGreyedImage(2));
+
+            try
+            {
+                pbox_skill2.Load(build.SkillGreyedImage(2));
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
+
             pbox_skill2.Enabled = false;
         }
         private void turnonSkill3()
         {
             HeroBuild build = HoNBP.ActualBuild();
-            pbox_skill3.Load(build.SkillImage(3));
+
+            try
+            {
+                pbox_skill3.Load(build.SkillImage(3));
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
+
             pbox_skill3.Enabled = true;
         }
         private void turnoffSkill3()
         {
             HeroBuild build = HoNBP.ActualBuild();
-            pbox_skill3.Load(build.SkillGreyedImage(3));
+
+            try
+            {
+                pbox_skill3.Load(build.SkillGreyedImage(3));
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
+
             pbox_skill3.Enabled = false;
         }
         private void turnonSkillUlt()
         {
             HeroBuild build = HoNBP.ActualBuild();
-            pbox_skill4.Load(build.SkillImage(4));
+
+            try
+            {
+                pbox_skill4.Load(build.SkillImage(4));
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
+
             pbox_skill4.Enabled = true;
         }
         private void turnoffSkillUlt()
         {
             HeroBuild build = HoNBP.ActualBuild();
-            pbox_skill4.Load(build.SkillGreyedImage(4));
+
+            try
+            {
+                pbox_skill4.Load(build.SkillGreyedImage(4));
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
+
             pbox_skill4.Enabled = false;
         }
         private void turnonAttrBoost()
         {
             HeroBuild build = HoNBP.ActualBuild();
-            pbox_attrboost.Load("./imgs/other/attrboost.png");
+
+            try
+            {
+                pbox_attrboost.Load("./imgs/other/attrboost.png");
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
+
             pbox_attrboost.Enabled = true;
         }
         private void turnoffAttrBoost()
         {
             HeroBuild build = HoNBP.ActualBuild();
-            pbox_attrboost.Load("./imgs/other/attrboost_g.png");
+
+            try
+            {
+                pbox_attrboost.Load("./imgs/other/attrboost_g.png");
+            }
+            catch (Exception ex)
+            {
+                exceptionWindow ew = new exceptionWindow(ex.ToString());
+                ew.ShowDialog();
+            }
             pbox_attrboost.Enabled = false;
-        }
-
-        private void lbox_choices_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            changeBuildLevel(lbox_choices.SelectedIndex + 1);
-        }
-
-        private void pbox_skill1_Click(object sender, EventArgs e)
-        {
-            if (isActualChoice(LevelChoice.Skill1))
-            {
-                removeChoice();
-            }
-            else
-            {
-                buildLevelUp(LevelChoice.Skill1);
-            }
-        }
-        private void pbox_skill2_Click(object sender, EventArgs e)
-        {
-            if (isActualChoice(LevelChoice.Skill2))
-            {
-                removeChoice();
-            }
-            else
-            {
-                buildLevelUp(LevelChoice.Skill2);
-            }
-        }
-        private void pbox_skill3_Click(object sender, EventArgs e)
-        {
-            if (isActualChoice(LevelChoice.Skill3))
-            {
-                removeChoice();
-            }
-            else
-            {
-                buildLevelUp(LevelChoice.Skill3);
-            }
-        }
-        private void pbox_skill4_Click(object sender, EventArgs e)
-        {
-            if (isActualChoice(LevelChoice.SkillUltimate))
-            {
-                removeChoice();
-            }
-            else
-            {
-                buildLevelUp(LevelChoice.SkillUltimate);
-            }
-        }
-        private void pbox_attrboost_Click(object sender, EventArgs e)
-        {
-            if (isActualChoice(LevelChoice.AttributeBooster))
-            {
-                removeChoice();
-            }
-            else
-            {
-                buildLevelUp(LevelChoice.AttributeBooster);
-            }
-        }
-
-        private void btn_resetAll_Click(object sender, EventArgs e)
-        {
-            removeAllChoices();
-        }
-
-        private void mi_SaveBuild_Click(object sender, EventArgs e)
-        {
-            SaveBuild();
-        }
-        private void mi_LoadBuild_Click(object sender, EventArgs e)
-        {
-            if (HoNBP.ActualBuild() != null)
-            {
-                if (MessageBox.Show("Do you like to save your current build?", "There is another build loaded.", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    SaveBuild();
-                }
-            }
-
-            LoadBuild();
-        }
-
-
-        private void SaveBuild()
-        {
-            if (saveBuild.ShowDialog() == DialogResult.Cancel) return;
-
-            HoNBP.SaveHeroToFile(saveBuild.FileName);
-
-            MessageBox.Show("Your build has been saved to " + saveBuild.FileName);
-        }
-
-        private void LoadBuild()
-        {
-            if (openBuild.ShowDialog() == DialogResult.Cancel) return;
-
-            HoNBP.LoadHeroFromFile(openBuild.FileName);
-
-            HoNBP.ActualBuild(HoNBP.NewBuild());
-
-            HeroBuild build = HoNBP.ActualBuild();
-            this.Text = "HoN Build Planner: " + build.BuildName();
-            this.pn_heroInfo.Visible = true;
-
-            build.LevelUp();
-            startHeroInfo();
-            updateAllHero();
-            changeBuildLevel(25);
-            lbox_choices.SelectedIndex = 24;
-        }
-
-        private void mi_About_Click(object sender, EventArgs e)
-        {
-            aboutHBP aboutWindow = new aboutHBP();
-            aboutWindow.ShowDialog();
-        }
+        }        
 
     }
 }
