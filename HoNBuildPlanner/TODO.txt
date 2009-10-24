@@ -55,8 +55,8 @@ Soul Reaper - NOT
 Devourer - YES
 Electrician - YES
 Kraken - YES
-War Beast - NOT
-Pharaoh - NOT
+War Beast - YES
+Pharaoh - YES
 Accursed - YES
 Pestilence - NOT
 Maliken - NOT

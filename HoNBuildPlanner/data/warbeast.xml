@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HoNBuildPlanner>
+  <Hero>
+    <Name>War Beast</Name>
+    <PrimaryAttribute>Strength</PrimaryAttribute>
+    <InitialHP>150</InitialHP>
+    <InitialHPRegen>0.25</InitialHPRegen>
+    <InitialMana>0</InitialMana>
+    <InitialManaRegen>0.01</InitialManaRegen>
+    <InitialAttirbutes>
+      <Strength>22</Strength>
+      <Agility>16</Agility>
+      <Intelligence>15</Intelligence>
+    </InitialAttirbutes>
+    <MovementSpeed>305</MovementSpeed>
+    <PerLevel>
+      <Strength>2.75</Strength>
+      <Agility>1.9</Agility>
+      <Intelligence>1.55</Intelligence>
+    </PerLevel>
+    <Armor>-1.0</Armor>
+    <MagicArmor>5.5</MagicArmor>
+    <AttackType>Melee</AttackType>
+    <MinDamage>31</MinDamage>
+    <MaxDamage>35</MaxDamage>
+    <Range>125</Range>
+    <BAT>1.7</BAT>
+    <Skills>
+      <Skill>
+        <Name>Summon Hellhounds</Name>
+        <Lore>War Beast Summons forth Hellhounds from the underworld to attack his enemies.</Lore>
+        <image>summonhellhounds</image>
+      </Skill>
+      <Skill>
+        <Name>Battle Cry</Name>
+        <Lore>War Beast lets out a mighty battle cry, adding bonus damage to himself and units under his command.</Lore>
+        <image>battlecry</image>
+      </Skill>
+      <Skill>
+        <Name>Primal Rage</Name>
+        <Lore>The War Beast builds his Primal Rage, increasing attack speed and attack damage of himself and units under his control.</Lore>
+        <image>primalrage</image>
+      </Skill>
+      <Skill>
+        <Name>Metamorphosis</Name>
+        <Lore>War Beast transforms into a Hellhound Lieutenant, gaining a larger health pool, a critical attack, and a speed boost.</Lore>
+        <image>metamorphosis</image>
+      </Skill>
+    </Skills>
+    <portrait>warbeast</portrait>
+  </Hero>
+</HoNBuildPlanner>

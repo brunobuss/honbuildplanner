@@ -6,5 +6,7 @@
     <File>electrician.xml</File>
     <File>glacius.xml</File>
     <File>kraken.xml</File>
+    <File>pharaoh.xml</File>
+    <File>warbeast.xml</File>
   </HeroList>
 </HoNBuildPlanner>

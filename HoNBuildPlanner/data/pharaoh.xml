@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HoNBuildPlanner>
+  <Hero>
+    <Name>Pharaoh</Name>
+    <PrimaryAttribute>Strength</PrimaryAttribute>
+    <InitialHP>150</InitialHP>
+    <InitialHPRegen>0.25</InitialHPRegen>
+    <InitialMana>0</InitialMana>
+    <InitialManaRegen>0.01</InitialManaRegen>
+    <InitialAttirbutes>
+      <Strength>24</Strength>
+      <Agility>13</Agility>
+      <Intelligence>17</Intelligence>
+    </InitialAttirbutes>
+    <MovementSpeed>310</MovementSpeed>
+    <PerLevel>
+      <Strength>2.4</Strength>
+      <Agility>1.2</Agility>
+      <Intelligence>1.3</Intelligence>
+    </PerLevel>
+    <Armor>-1.08</Armor>
+    <MagicArmor>5.5</MagicArmor>
+    <AttackType>Melee</AttackType>
+    <MinDamage>31</MinDamage>
+    <MaxDamage>33</MaxDamage>
+    <Range>125</Range>
+    <BAT>1.7</BAT>
+    <Skills>
+      <Skill>
+        <Name>Hellfire</Name>
+        <Lore>Pharaoh conjures plumes of fire around him for a short duration, hitting random nearby enemy targets, damaging each and stunning them briefly.</Lore>
+        <image>hellfire</image>
+      </Skill>
+      <Skill>
+        <Name>Wall of Mummies</Name>
+        <Lore>Pharaoh summons a wall of Mummies around himself and anyone close enough to him. Enemies who come close will be pushed away, causing damage and draining some Mana.</Lore>
+        <image>wallofmummies</image>
+      </Skill>
+      <Skill>
+        <Name>Tormented Soul</Name>
+        <Lore>Pharaoh unleashes a tormented soul toward a target location anywhere on the map. The soul self destructs when it reaches the designated location, releasing its dark energy to damage nearby enemies.</Lore>
+        <image>tormentedsoul</image>
+      </Skill>
+      <Skill>
+        <Name>Wrath of the Pharaoh</Name>
+        <Lore>Pharaoh directs all of his focus in a target direction. His focus is so intense it takes physical form as it travels in the desired direction. If it impacts with an enemy unit, it will damage and stun them and Pharaoh will charge toward its location.</Lore>
+        <image>wrathofthepharaoh</image>
+      </Skill>
+    </Skills>
+    <portrait>pharaoh</portrait>
+  </Hero>
+</HoNBuildPlanner>
